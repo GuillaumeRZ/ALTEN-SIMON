@@ -21,7 +21,14 @@ $(document).ready(function() {
 	$('form[name=mainForm]').submit(function(event) {
 		event.preventDefault();
 
-		console.log($(this).serialize());
+		var serializedData = $(this).serialize();
+		console.log(serializedData);
+
+		Swal.fire(
+			'Form is submitted !',
+		    serializedData,
+		  	'success'
+		);
 
 		return false;
 	});
