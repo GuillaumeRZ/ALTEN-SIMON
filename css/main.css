@@ -1,0 +1,76 @@
+body {
+	background-image: url('../images/dot.png');
+}
+div.container-sm {
+	background-color: #ffffff;
+	margin-top: 15px;
+	border: 1px solid #aaaaaa;
+}
+div.header-logo {
+	background-image: url('../images/header-logo.png');
+	background-repeat: no-repeat;
+	height: 95px;
+	min-width: 300px;
+	margin: 5px 0;
+}
+div.natixis-logo {
+	background-image: url('../images/natixis-logo.png');
+	background-repeat: no-repeat;
+	height: 50px;
+	min-width: 150px;
+	margin: 5px;
+}
+div.new-event {
+	background-image: url('../images/new-event-text.png');
+	background-repeat: no-repeat;
+	height: 32px;
+	width: 240px;
+	max-width: 240px;
+	margin: 5px;
+}
+hr.event-separator {
+	color: #9b9b9b;
+	margin-top: 1.5rem;
+	height: 2px;
+}
+div.panel-group {
+	margin: 8px 0;
+	padding: 0 15px;
+}
+div.panel-container {
+	box-shadow: 0 0 10px #cccccc;
+	margin-bottom: 20px;
+}
+div.border-blue {
+	border: 1px solid #006e6f;
+}
+div.panel-body {
+	padding: 0 15px;
+}
+div.panel-heading {
+	padding: 0;
+	border: 0;
+}
+h4.panel-title>a, h4.panel-title>a:active{
+	display: block;
+	padding: 15px;
+	color: #555;
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	word-spacing: 3px;
+	text-decoration: none;
+}
+div.panel-heading  a:before {
+	font-family: 'Glyphicons Halflings';
+	content: "\e114";
+	float: right;
+	transition: all 0.5s;
+}
+div.panel-heading.active a:before {
+	transform: rotate(180deg);
+}
+span.subtitle {
+	font-size: 1rem;
+	font-weight: normal;
+}
