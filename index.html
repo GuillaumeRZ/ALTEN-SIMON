@@ -7,6 +7,11 @@
 		<!-- Bootstrap -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		<!-- Cleave.js -->
+		<script src="https://nosir.github.io/cleave.js/dist/cleave.min.js" crossorigin="anonymous"></script>
+		<!-- Select 2 -->
+		<link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
+		<script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
 		<!-- Custom CSS -->
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
 		<!-- Custom JS -->
@@ -14,57 +19,134 @@
 	</head>
 	<body>
 		<div class="container-sm">
-			<!-- Header -->
-			<div class="row">
-				<div class="col-4 natixis-logo"></div>
-				<div class="col-4 header-logo"></div>
-			</div>
-			<!-- Body -->
-			<div class="row mr-4 ml-4">
-				<div class="col new-event"></div>
-				<div class="col"><hr class="event-separator" /></div>
-			</div>
-  			<div class="panel-group mr-4 ml-4" id="accordion" role="tablist" aria-multiselectable="true">
-  				<!-- Upper form -->
-  				<div class="panel-container border-blue">
-					<div class="panel panel-default">
-						<div class="panel-heading active" role="tab" id="headingOne">
-							<h4 class="panel-title">
-								<a role="button" data-toggle="collapse" data-parent="#accordion" href="#sectionOne" aria-expanded="true" aria-controls="sectionOne" class="text-center">
-									Disponibilité des lounges
-								</a>
-							</h4>
+			<form name="mainForm">
+				<!-- Header -->
+				<div class="row">
+					<div class="col-4 natixis-logo"></div>
+					<div class="col-4 header-logo"></div>
+				</div>
+				<!-- Body -->
+				<div class="row mr-4 ml-4">
+					<div class="col new-event"></div>
+					<div class="col"><hr class="event-separator" /></div>
+				</div>
+	  			<div class="panel-group mr-4 ml-4" id="accordion" role="tablist" aria-multiselectable="true">
+	  				<!-- Upper form -->
+	  				<div class="panel-container border-blue">
+						<div class="panel panel-default">
+							<div class="panel-heading active" role="tab" id="headingOne">
+								<h4 class="panel-title">
+									<a role="button" data-toggle="collapse" data-parent="#accordion" href="#sectionOne" aria-expanded="true" aria-controls="sectionOne" class="text-center">
+										Disponibilité des lounges
+									</a>
+								</h4>
+							</div>
+						</div>
+						<div id="sectionOne" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingOne">
+							<div class="panel-body">
+								<div class="row">
+									<div class="col">
+										<div class="form-group row">
+											<label for="example-search-input" class="col-2 col-form-label">Date :</label>
+											<div class="col-10">
+												<input class="form-control" type="tel" id="lounge-date" name="lounge-date" />
+											</div>
+										</div>
+										<div class="form-group row">
+											<label for="example-search-input" class="col-2 col-form-label">Heure :</label>
+											<div class="col-10">
+												<input class="form-control" type="tel" id="lounge-time" name="lounge-time" />
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="custom-control custom-radio">
+											<input type="radio" class="custom-control-input" id="radio1" name="lounge-floor" value="4">
+											<label class="custom-control-label" for="radio1">Lounge du 4ème étage</label>
+										</div>
+										<div class="custom-control custom-radio">
+											<input type="radio" class="custom-control-input" id="radio2" name="lounge-floor" value="5">
+											<label class="custom-control-label" for="radio2">Lounge du 5ème étage</label>
+										</div>
+										<div class="custom-control custom-radio">
+											<input type="radio" class="custom-control-input" id="radio3" name="lounge-floor" value="6" disabled>
+											<label class="custom-control-label" for="radio3">Lounge du 6ème étage</label>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div id="sectionOne" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingOne">
-						<div class="panel-body">
-							<div class="row">
-								<div class="col">a</div>
-								<div class="col"></div>
+
+					<!-- Lower form -->
+	  				<div class="panel-container">
+						<div class="panel panel-default">
+							<div class="panel-heading active" role="tab" id="headingTwo">
+								<h4 class="panel-title">
+									<a role="button" data-toggle="collapse" data-parent="#accordion" href="#sectionTwo" aria-expanded="true" aria-controls="sectionTwo">
+										Informations<br />
+										<span class="subtitle">Pour identifier votre évènement</span>
+									</a>
+								</h4>
+							</div>
+						</div>
+						<div id="sectionTwo" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingTwo">
+							<div class="panel-body">
+								<div class="row">
+									<div class="col">
+										<div class="form-group row">
+											<label>Type d'évènement</label>
+											<select class="form-control" id="eventType" name="event-type">
+												<option value="internalEvent">Évènement interne</option>
+												<option value="conference">Conférence</option>
+											</select>
+										</div>
+										<div class="form-group row">
+											<label>Nom de votre évènement</label>
+											<input class="form-control" type="text" id="eventName" name="event-name" />
+										</div>
+										<div class="form-group row">
+											<label>Nombre de participants</label>
+											<select class="form-control" id="eventParticipants" name="event-participants">
+												<option data-tokens="1">1</option>
+												<option data-tokens="2">2</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="col">
+										<div class="form-group row">
+											<label>Description</label>
+											<textarea class="form-control" name="eventDescription"></textarea>
+										</div>
+									</div>
+
+									<div class="col">
+										<div class="form-group row">
+											<label>Votre nom</label>
+											<input class="form-control" type="text" id="userLastName" name="user-last-name" />
+										</div>
+										<div class="form-group row">
+											<label>Votre prénom</label>
+											<input class="form-control" type="text" id="userFirstName" name="user-first-name" />
+										</div>
+										<div class="form-group row">
+											<label>Votre direction</label>
+											<select class="form-control" id="userDirection" name="user-direction">
+												<option value="option1">Option 1</option>
+												<option value="option2">Option 2</option>
+											</select>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-
-				<!-- Lower form -->
-  				<div class="panel-container">
-					<div class="panel panel-default">
-						<div class="panel-heading active" role="tab" id="headingTwo">
-							<h4 class="panel-title">
-								<a role="button" data-toggle="collapse" data-parent="#accordion" href="#sectionTwo" aria-expanded="true" aria-controls="sectionTwo">
-									Informations<br />
-									<span class="subtitle">Pour identifier votre évènement</span>
-								</a>
-							</h4>
-						</div>
-					</div>
-					<div id="sectionTwo" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingTwo">
-						<div class="panel-body">
-							Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-						</div>
-					</div>
+				<div class="text-center">
+					<button type="submit">Sauvegarder</button>
 				</div>
-			</div>
+			</form>
 		</div>
 	</body>
 </html>
