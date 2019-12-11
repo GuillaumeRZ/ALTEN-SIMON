@@ -4,6 +4,7 @@ body {
 div.container-sm {
 	background-color: #ffffff;
 	margin-top: 15px;
+	margin-bottom: 15px;
 	border: 1px solid #aaaaaa;
 }
 div.header-logo {
@@ -18,6 +19,13 @@ div.natixis-logo {
 	background-repeat: no-repeat;
 	height: 50px;
 	min-width: 150px;
+	margin: 5px;
+}
+div.rad-logo {
+	background-image: url('../images/rad-logo.png');
+	background-repeat: no-repeat;
+	height: 60px;
+	min-width: 200px;
 	margin: 5px;
 }
 div.new-event {
@@ -51,7 +59,7 @@ div.panel-heading {
 	padding: 0;
 	border: 0;
 }
-h4.panel-title>a, h4.panel-title>a:active{
+h4.panel-title>a, h4.panel-title>a:active {
 	display: block;
 	padding: 15px;
 	color: #555;
@@ -73,4 +81,10 @@ div.panel-heading.active a:before {
 span.subtitle {
 	font-size: 1rem;
 	font-weight: normal;
+}
+input.small-date {
+	width: 7rem;
+}
+div.sideLine {
+	border-right: 1px solid #aaaaaa;
 }

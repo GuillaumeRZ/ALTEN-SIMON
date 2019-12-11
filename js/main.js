@@ -31,13 +31,13 @@ $(document).ready(function() {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const cleaveDate = new Cleave('#lounge-date', {
+	const cleaveDate = new Cleave('#lounge-date', {
 		date: true,
 		delimiter: '/',
 		datePattern: ['d', 'm', 'Y']
 	});
 
-    const cleaveTime = new Cleave('#lounge-time', {
+	const cleaveTime = new Cleave('#lounge-time', {
 		time: true,
 		timePattern: ['h', 'm']
 	});

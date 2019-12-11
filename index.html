@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- jQuery & popper -->
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -27,7 +28,7 @@
 				</div>
 				<!-- Body -->
 				<div class="row mr-4 ml-4">
-					<div class="col new-event"></div>
+					<div class="col-sm new-event"></div>
 					<div class="col"><hr class="event-separator" /></div>
 				</div>
 	  			<div class="panel-group mr-4 ml-4" id="accordion" role="tablist" aria-multiselectable="true">
@@ -45,21 +46,22 @@
 						<div id="sectionOne" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingOne">
 							<div class="panel-body">
 								<div class="row">
-									<div class="col">
+									<div class="col-sm"></div>
+									<div class="col-sm sideLine">
 										<div class="form-group row">
-											<label for="example-search-input" class="col-2 col-form-label">Date :</label>
-											<div class="col-10">
-												<input class="form-control" type="tel" id="lounge-date" name="lounge-date" />
+											<label for="example-search-input" class="col-4 col-form-label">Date :</label>
+											<div class="col-4">
+												<input class="form-control small-date" type="tel" id="lounge-date" name="lounge-date" />
 											</div>
 										</div>
 										<div class="form-group row">
-											<label for="example-search-input" class="col-2 col-form-label">Heure :</label>
-											<div class="col-10">
-												<input class="form-control" type="tel" id="lounge-time" name="lounge-time" />
+											<label for="example-search-input" class="col-4 col-form-label">Heure :</label>
+											<div class="col-4">
+												<input class="form-control small-date" type="tel" id="lounge-time" name="lounge-time" />
 											</div>
 										</div>
 									</div>
-									<div class="col">
+									<div class="col-sm">
 										<div class="custom-control custom-radio">
 											<input type="radio" class="custom-control-input" id="radio1" name="lounge-floor" value="4">
 											<label class="custom-control-label" for="radio1">Lounge du 4ème étage</label>
@@ -73,7 +75,9 @@
 											<label class="custom-control-label" for="radio3">Lounge du 6ème étage</label>
 										</div>
 									</div>
+									<div class="col-sm"></div>
 								</div>
+								<br />
 							</div>
 						</div>
 					</div>
@@ -93,7 +97,7 @@
 						<div id="sectionTwo" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingTwo">
 							<div class="panel-body">
 								<div class="row">
-									<div class="col">
+									<div class="col px-5">
 										<div class="form-group row">
 											<label>Type d'évènement</label>
 											<select class="form-control" id="eventType" name="event-type">
@@ -114,14 +118,14 @@
 										</div>
 									</div>
 
-									<div class="col">
+									<div class="col px-5">
 										<div class="form-group row">
 											<label>Description</label>
 											<textarea class="form-control" name="eventDescription"></textarea>
 										</div>
 									</div>
 
-									<div class="col">
+									<div class="col px-5">
 										<div class="form-group row">
 											<label>Votre nom</label>
 											<input class="form-control" type="text" id="userLastName" name="user-last-name" />
@@ -146,6 +150,8 @@
 				<div class="text-center">
 					<button type="submit">Sauvegarder</button>
 				</div>
+				<div class="rad-logo float-right"></div> 
+				<br /><br /><br />
 			</form>
 		</div>
 	</body>
